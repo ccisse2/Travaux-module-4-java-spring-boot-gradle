@@ -1,0 +1,53 @@
+<!doctype html>
+<html xmlns:th="http:/www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filmothèque</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/table.css">
+    <link rel="icon" href="/images/logoFilmotheque.png" sizes="32*32">
+</head>
+<body>
+<header>
+    <h1 id="nav-title"> <a data-th-href="@{/}">Filmothèque</a></h1>
+    <nav>
+        <ul>
+            <li>
+                <a data-th-href="@{/films}">Films</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="center-main">
+    <div class="center-section">
+        <h1>Voici la bibliothèque des Films de ENI Ecole</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Genre</th>
+                <th>Année</th>
+                <th>Titre</th>
+                <th>Réalisateur</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-th-each ="film : ${films}">
+                <td data-th-text="${film.id}"></td>
+                <td data-th-text="${film.genre}"></td>
+                <td data-th-text="${film.annee}"></td>
+                <td data-th-text="${film.titre}"></td>
+                <td data-th-text="${film.realisateur}"></td>
+                <td>
+                    <a data-th-href="@{/films/detail(id=${film.id})}">Détail</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>

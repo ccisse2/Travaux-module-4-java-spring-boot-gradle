@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="http:/www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filmothèque</title>
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/table.css">
+    <link rel="stylesheet" href="/css/demo-form.css">
+    <link rel="icon" href="/images/logoFilmotheque.png" sizes="32*32">
+</head>
+<body>
+<header>
+    <h1 id="nav-title"> <a data-th-href="@{/}">Filmothèque</a></h1>
+    <nav>
+        <ul>
+            <li>
+                <a data-th-href="@{/films}">Films</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <h1>Détail du film</h1>
+    <ul class="flex-outer">
+        <li>
+            <label for="1">Genre :</label>
+            <input type="text" name="" id="1" disabled data-th-value="${film.genre.titre}">
+        </li>
+        <li>
+            <label for="2">Année :</label>
+            <input type="text" name="" id="2" disabled data-th-value="${film.annee}">
+        </li>
+        <li>
+            <label for="3">Titre :</label>
+            <input type="text" name="" id="3" disabled data-th-value="${film.titre}">
+        </li>
+        <li>
+            <label for="4">Réalisateur :</label>
+            <input type="text" name="" id="4" disabled data-th-value="${film.realisateur}">
+        </li>
+        <li>
+            <label for="5">Durée :</label>
+            <input type="text" name="" id="5" disabled data-th-value="${film.duree}">
+        </li>
+        <li>
+            <label for="6">Acteurs : </label>
+            <select name="" id="6" disabled multiple>
+                <option data-th-each="acteur : ${film.acteurs}" data-th-text="${'-' + acteur.prenom + ' ' + acteur.nom}" ></option>
+            </select>
+        </li>
+        <li>
+            <label for="7">Synopsis :</label>
+            <textarea disabled name="" id="7" cols="30" rows="10" data-th-text="${film.synopsis}"></textarea>
+        </li>
+    </ul>
+</main>
+</body>
+</html>
