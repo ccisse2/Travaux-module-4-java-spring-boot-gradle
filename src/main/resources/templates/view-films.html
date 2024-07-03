@@ -1,26 +1,15 @@
-<!doctype html>
-<html xmlns:th="http:/www.thymeleaf.org" >
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-demo(
+                                                                                titrePage=~{:: title},
+                                                                                contenuPage=~{:: #monMain},
+                                                                                ressourcesSupp=~{:: #ressources-css}
+                                                                                )}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Filmothèque</title>
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/table.css">
-    <link rel="icon" href="/images/logoFilmotheque.png" sizes="32*32">
+
+    <th:block id="ressources-css"><link rel="stylesheet" href="/css/table.css"></th:block>
 </head>
 <body>
-<header>
-    <h1 id="nav-title"> <a data-th-href="@{/}">Filmothèque</a></h1>
-    <nav>
-        <ul>
-            <li>
-                <a data-th-href="@{/films}">Films</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="center-main">
+<main class="center-main" id="monMain">
     <div class="center-section">
         <h1>Voici la bibliothèque des Films de ENI Ecole</h1>
         <table>

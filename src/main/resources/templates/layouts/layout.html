@@ -1,0 +1,20 @@
+<!doctype html>
+<html  xmlns:th="http://www.thymeleaf.org" data-th-fragment="layout-demo(titrePage, contenuPage, ressourcesSupp)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-replace="${titrePage}">Filmothèque</title>
+    <link rel="stylesheet" data-th-href="@{/css/layout.css}">
+    <link rel="stylesheet" data-th-href="@{/css/general.css}">
+    <link rel="icon" data-th-href="@{/images/logoFilmotheque.png}" sizes="32*32">
+    <th:block data-th-replace="${ressourcesSupp}"></th:block>
+
+</head>
+<body>
+<div data-th-replace="~{fragments/fragment-entete :: frag-entete}"></div>
+<main data-th-replace="${contenuPage}">
+</main>
+<div data-th-replace="~{fragments/fragment-piedDePage :: frag-piedpage}"></div>
+</body>
+</html>

@@ -1,14 +1,14 @@
-<!doctype html>
-<html xmlns:th="http:/www.thymeleaf.org" >
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-demo(
+                                                                                titrePage=~{:: title},
+                                                                                contenuPage=~{:: #monMain},
+                                                                                ressourcesSupp=~{:: #ressources-css}
+                                                                                )}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Filmothèque</title>
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/table.css">
-    <link rel="stylesheet" href="/css/demo-form.css">
-    <link rel="icon" href="/images/logoFilmotheque.png" sizes="32*32">
+
+    <title>Le détail du films</title>
+
+    <th:block id="ressources-css"><link rel="stylesheet" href="/css/demo-form.css"></th:block>
+
 </head>
 <body>
 <header>
@@ -21,7 +21,7 @@
         </ul>
     </nav>
 </header>
-<main>
+<main id="monMain">
     <h1>Détail du film</h1>
     <ul class="flex-outer">
         <li>
