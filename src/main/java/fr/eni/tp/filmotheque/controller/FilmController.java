@@ -41,7 +41,7 @@ public class FilmController {
 	}
 
 	@GetMapping("/creer")
-	public String creerFilm(Model model) {
+	public String creerFilm() {
         return "view-film-creer";
 	}
 }

@@ -5,7 +5,6 @@ import fr.eni.tp.filmotheque.bll.contexte.ContexteService;
 import fr.eni.tp.filmotheque.bo.Membre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
@@ -13,7 +12,7 @@ import org.springframework.web.bind.support.SessionStatus;
 @RequestMapping("/contexte")
 @SessionAttributes("membreEnSession")
 public class ContexteController {
-    private ContexteService contexteService;
+    private final ContexteService contexteService;
 
     @Autowired
     public ContexteController(ContexteService contexteService) {
