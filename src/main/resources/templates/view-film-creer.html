@@ -5,14 +5,25 @@
                                                                                 )}">
 <head>
 
-    <title>détail du films</title>
+    <title>Créer</title>
 
     <th:block id="ressources-css"><link rel="stylesheet" href="/css/demo-form.css"></th:block>
 
 </head>
 <body>
 <main id="monMain">
-    <form data-th-replace="~{fragments/fragment-film-form :: frag-film-form}"></form>
+    <form action="" method="post">
+        <h1>Création d'un film[En cours de construction]</h1>
+        <ul class="flex-outer">
+            <li>
+                <label for="selectGenre">Genre :</label>
+                <select name="genre" id="selectGenre">
+                    <option data-th-each="item : ${genresSession}" data-th-text="${item.titre}"
+                            data-th-value="${item.id}"></option>
+                </select>
+            </li>
+        </ul>
+    </form>
 </main>
 </body>
 </html>

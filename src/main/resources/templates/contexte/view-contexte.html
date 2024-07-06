@@ -1,0 +1,27 @@
+<html lang="fr" xmlns:th="http://www.thymeleaf.org"
+      data-th-replace="~{layouts/layout :: layout-filmotheque(
+                                                       titrePage=~{:: title},
+                                                       contenuPage=~{:: #monMain},
+                                                       ressourcesSupp=~{:: #ressources-css}
+                                                       )}">
+<head>
+
+    <title>Créer</title>
+
+    <th:block id="ressources-css"><link rel="stylesheet" href="/css/tp-contexte.css"></th:block>
+
+</head>
+<body>
+<main class="center-main" id="monMain">
+    <h1>Contextes</h1>
+    <th:block data-th-if="${membreEnSession == null || membreEnSession.id == 0}">
+        <a href="/contexte/session?email=jtrillard@campus-eni.fr">Julien</a>
+        <a href="/contexte/session?email=abaille@campus-eni.fr">Anne-lis</a>
+        <a href="/contexte/session?email=sgobin@campus-eni.fr">Stéphane</a>
+    </th:block>
+
+    <a href="/contexte/cloture">Déconnexion</a>
+</main>
+</body>
+</html>
+

@@ -1,13 +1,16 @@
-<header  xmlns:th="http://www.thymeleaf.org" data-th-fragment="frag-entete">
+<header xmlns:th="http://www.thymeleaf.org" data-th-fragment="frag-entete">
     <h1 id="nav-title">
-        <img data-th-src="@{/images/logoFilmotheque.png}">
+        <img src="/images/logoFilmotheque.png" alt="logo-eni">
         <a data-th-href="@{/}">Filmothèque</a>
+        <th:block data-th-if="${membreEnSession != null && membreEnSession.id > 0}">
+            <span data-th-text="'[' + ${membreEnSession.prenom} + ']'"></span>
+        </th:block>
     </h1>
     <nav>
         <ul>
-            <li>
-                <a data-th-href="@{/films}">Films</a>
-            </li>
+            <li><a data-th-href="@{/films}">Films</a></li>
+            <li><a data-th-href="@{/films/creer}">Créer</a></li>
+            <li><a data-th-href="@{/contexte}">Contexte</a></li>
         </ul>
     </nav>
 </header>

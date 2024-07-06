@@ -1,0 +1,11 @@
+<!-- templates/fragments/fragment-head.html -->
+<head xmlns:th="http://www.thymeleaf.org" data-th-fragment="frag-head(titrePage, ressourcesSupp)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title data-th-text="${titrePage}">Filmothèque</title>
+    <link rel="stylesheet" data-th-href="@{/css/layout.css}">
+    <link rel="stylesheet" data-th-href="@{/css/general.css}">
+    <link rel="icon" data-th-href="@{/images/logoFilmotheque.png}" sizes="32x32">
+    <th:block th:if="${ressourcesSupp != null}" th:replace="${ressourcesSupp}"></th:block>
+</head>
