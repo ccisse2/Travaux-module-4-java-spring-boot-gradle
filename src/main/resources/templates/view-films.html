@@ -6,7 +6,7 @@
 <head>
     <title>Filmothèque</title>
 
-    <th:block id="ressources-css"><link rel="stylesheet" href="/css/table.css"></th:block>
+    <th:block id="ressources-css"><link rel="stylesheet" href="/css/demo-table.css"></th:block>
 </head>
 <body>
 <main class="center-main" id="monMain">
@@ -32,6 +32,10 @@
                 <td data-th-text="${film.realisateur}"></td>
                 <td>
                     <a data-th-href="@{/films/detail(id=${film.id})}">Détail</a>
+                    <!--Affichage du lien Avis si le membre est connecté-->
+                    <th:block data-th-if="${membreEnSession != null && membreEnSession.id > 0}">
+                        <a data-th-href="@{/avis/creer(idFilm=${film.id})}">Avis</a>
+                    </th:block>
                 </td>
             </tr>
             </tbody>

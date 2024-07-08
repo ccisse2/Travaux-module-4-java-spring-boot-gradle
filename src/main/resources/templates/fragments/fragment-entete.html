@@ -9,7 +9,11 @@
     <nav>
         <ul>
             <li><a data-th-href="@{/films}">Films</a></li>
-            <li><a data-th-href="@{/films/creer}">Créer</a></li>
+            <!--Le lien creer n'existe pas si aucun membre admin n'est connecté -->
+            <th:block data-th-if="${membreEnSession != null && membreEnSession.admin==true}">
+                <li><a data-th-href="@{/films/creer}">Créer</a></li>
+            </th:block>
+
             <li><a data-th-href="@{/contexte}">Contexte</a></li>
         </ul>
     </nav>

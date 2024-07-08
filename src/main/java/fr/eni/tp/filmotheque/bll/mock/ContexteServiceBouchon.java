@@ -1,4 +1,4 @@
-package fr.eni.tp.filmotheque.mock;
+package fr.eni.tp.filmotheque.bll.mock;
 
 import java.util.ArrayList;
 import java.util.List;

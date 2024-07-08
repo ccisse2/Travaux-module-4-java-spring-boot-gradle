@@ -39,8 +39,7 @@ header a:hover {
 
 /* Main */
 main {
-    margin-top: 15px;
-    margin-left: 15px;
+    margin-bottom: 15px;
 }
 
 main h1 {
@@ -53,10 +52,24 @@ main h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 300px;
     color: black;
+    flex-direction: column;
 }
 
 .center-section {
     text-align: center;
+}
+
+.center-main a {
+    margin: 0;
+    padding: 8px 16px;
+    background-color: #008080;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.center-main a:hover {
+    background-color: #004040;
 }

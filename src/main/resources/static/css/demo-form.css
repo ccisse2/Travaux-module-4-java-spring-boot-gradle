@@ -2,12 +2,14 @@
 
 form {
 	background-color: #f2f2f2;
+	min-height: 80px;
+	margin: 20px 10px;
+	padding: 20px;
 }
 
 form h1 {
 	margin: 15px;
 }
-
 .flex-outer li {
 	display: flex;
 	flex-wrap: wrap;
@@ -28,10 +30,20 @@ form h1 {
 	margin-left: auto;
 	margin-bottom: 5px; padding : 8px 16px;
 	border: none;
-	background: #333;
+	background: #0e68f2;
 	color: #f2f2f2;
 	text-transform: uppercase;
 	letter-spacing: .09em;
-	border-radius: 2px;
-	padding: 8px 16px
+	border-radius: 5px;
+	padding: 8px 16px;
+	cursor: pointer;
 }
+.flex-outer li button:hover{
+	background: #33d8f1;
+    color: #f2f2f2;
+}
+
+#acteurs{
+	width: 10%;
+}
+

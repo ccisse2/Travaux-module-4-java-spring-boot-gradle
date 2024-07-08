@@ -1,26 +1,60 @@
+<!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-filmotheque(
                                                                                 titrePage=~{:: title},
                                                                                 contenuPage=~{:: #monMain},
                                                                                 ressourcesSupp=~{:: #ressources-css}
                                                                                 )}">
 <head>
-
+    <meta charset="UTF-8">
     <title>Créer</title>
-
     <th:block id="ressources-css"><link rel="stylesheet" href="/css/demo-form.css"></th:block>
-
 </head>
 <body>
 <main id="monMain">
-    <form action="" method="post">
-        <h1>Création d'un film[En cours de construction]</h1>
+    <form  data-th-action="@{/films/creer}" data-th-object="${film}" method="post">
+        <h1>Création d'un film</h1>
         <ul class="flex-outer">
             <li>
                 <label for="selectGenre">Genre :</label>
-                <select name="genre" id="selectGenre">
+                <select name="genre" id="selectGenre" data-th-field="*{genre}">
                     <option data-th-each="item : ${genresSession}" data-th-text="${item.titre}"
                             data-th-value="${item.id}"></option>
                 </select>
+            </li>
+            <li>
+                <label for="annee">Année :</label>
+                <input required type="text" name="annee" id="annee" data-th-field="*{annee}">
+            </li>
+            <li>
+                <label for="titre">Titre :</label>
+                <input required type="text" name="titre" id="titre" data-th-field="*{titre}">
+            </li>
+            <li>
+                <label for="realisateur">Réalisateur :</label>
+                <select name="realisateur" id="realisateur" data-th-field="*{realisateur}">
+                    <option data-th-each="realisateur : ${realisateurs}"
+                            data-th-value="${realisateur.id}"
+                            data-th-text="${realisateur.prenom + ' ' + realisateur.nom}"></option>
+                </select>
+            </li>
+            <li>
+                <label for="duree">Durée :</label>
+                <input required type="text" name="duree" id="duree" data-th-field="*{duree}">
+            </li>
+            <li>
+                <label for="acteurs">Acteur(s) : </label>
+                <select name="acteurs" id="acteurs" multiple data-th-field="*{acteurs}">
+                    <option data-th-each="acteur : ${acteurs}"
+                            data-th-value="${acteur.id}"
+                            data-th-text="${acteur.prenom+' '+acteur.nom}"></option>
+                </select>
+            </li>
+            <li>
+                <label for="synopsis">Synopsis :</label>
+                <textarea required name="synopsis" id="synopsis" cols="30" rows="10" data-th-field="*{synopsis}"></textarea>
+            </li>
+            <li>
+                <button type="submit">Enregistrer</button>
             </li>
         </ul>
     </form>

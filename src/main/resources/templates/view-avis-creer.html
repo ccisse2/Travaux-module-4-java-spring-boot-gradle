@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" data-th-replace="~{layouts/layout :: layout-filmotheque(
+                                                                                titrePage=~{:: title},
+                                                                                contenuPage=~{:: #monMain},
+                                                                                ressourcesSupp=~{:: #ressources-css}
+                                                                                )}">
+<head>
+    <meta charset="UTF-8">
+    <title>Avis</title>
+    <th:block id="ressources-css">
+        <link rel="stylesheet" href="/css/demo-form.css">
+    </th:block>
+</head>
+<body>
+<main id="monMain">
+    <form data-th-action="@{/avis/creer}" method="post">
+        <input type="hidden" name="idFilm" th:value="${film.id}">
+        <h1>Ajouter un avis au film : <span data-th-text="${film.titre}"> </span></h1>
+        <ul class="flex-outer">
+            <li>
+                <label for="selectGenre">Note :</label>
+                <!--La note doit être comprise de 1 à 5-->
+                <select name="note" id="selectGenre">
+                    <option data-th-each="note : ${#numbers.sequence(1,5)}"
+                            data-th-value="${note}" data-th-text="${note}"></option>
+                </select>
+            </li>
+            <li>
+                <label for="commentaire">Commentaire :</label>
+                <textarea name="commentaire" id="commentaire" cols="30" rows="10" ></textarea>
+            </li>
+            <li id="btEnregistrer">
+                <button  type="submit">Enregistrer</button>
+            </li>
+        </ul>
+    </form>
+</main>
+</body>
+</html>

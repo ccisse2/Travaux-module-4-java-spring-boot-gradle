@@ -31,5 +31,13 @@
             <label for="7">Synopsis :</label>
             <textarea disabled name="" id="7" cols="30" rows="10" data-th-text="${film.synopsis}"></textarea>
         </li>
+        <li>
+            <label for="6">Commentaire(s) : </label>
+            <ul>
+                <li data-th-each="avis : ${film.avis}"
+                    data-th-text="${'-' + avis.commentaire + '[' + avis.note + ']' + '-' + '(' + avis.membre.prenom + ' ' + avis.membre.nom + ')'}">
+                </li>
+            </ul>
+        </li>
     </ul>
 </form>
